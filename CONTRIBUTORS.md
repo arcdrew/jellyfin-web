@@ -110,6 +110,7 @@
 - [austinhardaway](https://github.com/austinhardaway)
 - [Alex Dickens](https://github.com/alex-dicko)
 - [shindouj](https://github.com/shindouj)
+- [arcdrew](https://github.com/arcdrew)
 
 ## Emby Contributors
 
