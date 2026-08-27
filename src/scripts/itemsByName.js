@@ -33,6 +33,20 @@ function renderItems(page, item, user) {
         });
     }
 
+    if (item.VideoCount) {
+        sections.push({
+            name: globalize.translate('HeaderVideos'),
+            type: 'Video'
+        });
+    }
+
+    if (item.PhotoCount) {
+        sections.push({
+            name: globalize.translate('Photos'),
+            type: 'Photo'
+        });
+    }
+
     if (item.SeriesCount) {
         sections.push({
             name: globalize.translate('Shows'),
@@ -148,6 +162,42 @@ function renderSection(item, element, type, user) {
                 overlayMoreButton: true,
                 overlayText: false,
                 showYear: true
+            });
+            break;
+
+        case 'Video':
+            loadItems(element, item, type, {
+                MediaTypes: '',
+                IncludeItemTypes: 'Video',
+                PersonTypes: '',
+                ArtistIds: '',
+                AlbumArtistIds: '',
+                Limit: 10,
+                SortBy: 'SortName'
+            }, {
+                shape: 'overflowPortrait',
+                showTitle: true,
+                centerText: true,
+                overlayPlayButton: true,
+                overlayText: false
+            });
+            break;
+
+        case 'Photo':
+            loadItems(element, item, type, {
+                MediaTypes: '',
+                IncludeItemTypes: 'Photo',
+                PersonTypes: '',
+                ArtistIds: '',
+                AlbumArtistIds: '',
+                Limit: 10,
+                SortBy: 'SortName'
+            }, {
+                shape: 'overflowPortrait',
+                showTitle: true,
+                centerText: true,
+                overlayPlayButton: false,
+                overlayText: false
             });
             break;
 
